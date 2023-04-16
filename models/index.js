@@ -2,23 +2,7 @@ const dbConfig = require("../config/dbConfig.js");
 
 const { Sequelize, DataTypes, HasMany } = require("sequelize");
 
-const sequelize = new Sequelize(
-  dbConfig.DATABASE,
-  dbConfig.USER,
-  dbConfig.PASSWORD,
-  {
-    host: dbConfig.HOST,
-    dialect: dbConfig.dialect,
-    operatorsAliases: false,
-    pool: {
-      max: dbConfig.pool.max,
-      min: dbConfig.pool.min,
-      acquire: dbConfig.pool.acquire,
-      idle: dbConfig.idle,
-    },
-  }
-);
-
+const sequelize = new Sequelize(dbConfig.MYSQL_URL, { dialect: "mysql" });
 sequelize
   .authenticate()
   .then(() => {

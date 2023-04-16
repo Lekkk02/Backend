@@ -1,8 +1,7 @@
 module.exports = {
-  HOST: process.env.MYSQLHOST || "localhost",
-  USER: process.env.MYSQLUSER || "root",
-  PASSWORD: process.env.MYSQLPASSWORD || "qwerty09",
-  DATABASE: process.env.MYSQL_URL || "database_development",
+  HOST: process.env.MYSQLHOST,
+  USER: process.env.MYSQLUSER,
+  PASSWORD: process.env.MYSQLPASSWORD,
   MYSQL_URL: process.env.MYSQL_URL,
   PORT: process.env.MYSQLPORT || 8081,
   dialect: "mariadb",

@@ -6,7 +6,6 @@ const fs = require("fs");
 const path = require("path");
 const unlinkFile = util.promisify(fs.unlink);
 const dbConfig = require("./config/dbConfig.js");
-
 const app = express();
 
 /* var corOptions = {
@@ -52,7 +51,7 @@ app.get("/", (req, res) => {
   res.json({ message: "Hello" });
 });
 
-const PORT = dbConfig.PORT;
+const PORT = 6498;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
