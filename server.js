@@ -5,6 +5,7 @@ const util = require("util");
 const fs = require("fs");
 const path = require("path");
 const unlinkFile = util.promisify(fs.unlink);
+const dbConfig = require("../config/dbConfig.js");
 
 const app = express();
 
@@ -51,7 +52,7 @@ app.get("/", (req, res) => {
   res.json({ message: "Hello" });
 });
 
-const PORT = 8081;
+const PORT = dbConfig.PORT;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
