@@ -5,7 +5,7 @@ const util = require("util");
 const fs = require("fs");
 const path = require("path");
 const unlinkFile = util.promisify(fs.unlink);
-const dbConfig = require("../config/dbConfig.js");
+const dbConfig = require("./config/dbConfig.js");
 
 const app = express();
 
