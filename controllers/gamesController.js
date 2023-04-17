@@ -37,7 +37,7 @@ const updateGame = async (req, res) => {
 
 const deleteGame = async (req, res) => {
   let id = req.params.id;
-  await Game.destroy({ where: { id: id } });
+  await Game.destroy({ where: { idJuego: id } });
   res.status(200).send("Juego eliminado!");
 };
 

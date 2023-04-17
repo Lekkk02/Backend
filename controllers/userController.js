@@ -28,10 +28,9 @@ const getOneUser = async (req, res) => {
 const strikeUser = async (req, res) => {
   let id = req.params.id;
   let user = await User.findOne(
-    { attributes: ["strikes"] },
     { where: { idusuario: id } }
   );
-  CountStrikes = user["strikes"] + 1;
+  var CountStrikes = parseInt(user.strikes) + 1;
   await User.update({ strikes: CountStrikes }, { where: { idusuario: id } });
   res.status(200).send("Strike añadido");
 };
